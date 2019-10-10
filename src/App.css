@@ -20,3 +20,47 @@
 .App-link {
   color: #09d3ac;
 }
+
+.hidden {
+  display:none;
+}
+.normal{
+  display: inline-block;
+}
+.list{
+  display: flex;
+}
+.button{
+  margin: 5px;
+  /*position: absolute;*/
+}
+.input{
+  border-radius: 4px;
+  margin: 10px;
+}
+button.postDelete{
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+.post{
+  display: inline-block;
+  position: relative;
+  height: 100px;
+  width: 125px;
+  background-color: #f6f8f9;
+  margin: 15px;
+  -webkit-box-shadow: 0 3px 2px #777;
+  -moz-box-shadow: 0 3px 2px #777;
+  box-shadow: 0 4px 5px #777;
+  border-radius: 5px;
+}
+
+.form{
+  margin-left: 5px;
+  border: 1px solid #dee3e7;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 3px 2px #777;
+  -moz-box-shadow: 0 3px 2px #777;
+  box-shadow: 0 3px 2px #777;
+}
