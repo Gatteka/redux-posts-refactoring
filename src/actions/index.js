@@ -1,10 +1,30 @@
 
 export const showForm = (showElement) => ({
-    type: 'BUTTON_CLICKED',
+    type: 'SHOW_FORM',
     showElement,
 });
-export const sendForm = (input,area) => ({
+
+export const sendForm = (input,text) => ({
     type: 'SEND_FORM',
     input,
-    area,
+    text,
+});
+
+export const deletePost = (id) => ({
+    type: 'DELETE_POST',
+    id
+});
+
+export const showUpdateForm = (id,title,text) => ({
+    type: 'SHOW_UPDATE_FORM',
+    id,
+    title,
+    text
+});
+
+export const updatePost = (title,text,id) => ({
+    type: 'UPDATE_POST',
+    title,
+    text,
+    id
 });

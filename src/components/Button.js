@@ -1,11 +1,13 @@
 import React from 'react'
 
-function Button({children, onClick}) {
+function Button({children, onClick,enabled}) {
+console.log('BUTTONNN');
+console.log(enabled);
     return (
         <button
-            className={'button'}
+            className={'ui button'}
             onClick={onClick}
-        > {children} </button>
+        >{enabled ? "Hide Form": "Show Form" }</button>
     )
 }
 

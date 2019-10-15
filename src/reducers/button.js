@@ -2,34 +2,34 @@ import React from 'react'
 
 const button = (state = [], action) => {
     switch (action.type) {
-        case 'BUTTON_CLICKED':
-            console.log('button');
-               let button = state.filter(b => b.showElement === action.showElement).pop();
-
-               if(button) {
-                   console.log(state);
-
-                   // return [ ...state,
-                   //     {
-                   //         showElement: action.showElement,
-                   //         enabled: !button.enabled
-                   //     }
-                   // ];
-                   return [{
-                           showElement: action.showElement,
-                           enabled: !button.enabled
-                       }];
-               }
-                //  state.map(button => button.id === action.id ? button.enabled = !button.enabled : button);
-                // return state;
-            console.log(state);
-            return [ ...state,
+        case 'SHOW_FORM':
+            let elementButton = state.filter(b => b.showElement === action.showElement).pop();
+            if (elementButton) {
+                return [{
+                    showElement: action.showElement,
+                    elementAction: 'create',
+                    enabled: !elementButton.enabled
+                }];
+            }
+            return [...state,
                 {
                     showElement: action.showElement,
+                    elementAction: 'create',
                     enabled: true
                 }
             ];
 
+        case 'SHOW_UPDATE_FORM':
+            return [{
+                showElement: 'form-element-1',
+                elementAction: 'update',
+                optionalState: {
+                    id: action.id,
+                    title: action.title,
+                    text: action.text
+                },
+                enabled: true
+            }];
         default:
             return state
     }

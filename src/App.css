@@ -20,6 +20,17 @@
 .App-link {
   color: #09d3ac;
 }
+#user-name{
+  display: inline;
+  margin: 1%;
+}
+#post-text-content{
+  overflow-x:hidden;
+}
+
+#post-buttons{
+  display: inline-flex;
+}
 
 .hidden {
   display:none;
@@ -28,10 +39,11 @@
   display: inline-block;
 }
 .list{
-  display: flex;
+  /*display: flex;*/
+  display: list-item;
 }
-.button{
-  margin: 5px;
+.ui.primary.button {
+    margin-top: 5%;
   /*position: absolute;*/
 }
 .input{
@@ -40,6 +52,8 @@
 }
 button.postDelete{
   position: absolute;
+    height: 5%;
+    width: 5%;
   right: 2px;
   top: 2px;
 }
@@ -56,11 +70,11 @@ button.postDelete{
   border-radius: 5px;
 }
 
-.form{
-  margin-left: 5px;
-  border: 1px solid #dee3e7;
-  border-radius: 12px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 3px 2px #777;
-}
+/*.form{*/
+/*  margin-left: 5px;*/
+/*  border: 1px solid #dee3e7;*/
+/*  border-radius: 12px;*/
+/*  -webkit-box-shadow: 0 3px 2px #777;*/
+/*  -moz-box-shadow: 0 3px 2px #777;*/
+/*  box-shadow: 0 3px 2px #777;*/
+/*}*/

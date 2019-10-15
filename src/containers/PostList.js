@@ -2,8 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import PostList from '../components/PostList'
 
-const mapStateToProps= (state, ownProps) => ({
-    allPosts: state.form
+const mapStateToProps= (state) => ({
+    allPosts: state.posts
 });
 
 export default connect(
