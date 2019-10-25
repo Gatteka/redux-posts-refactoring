@@ -1,20 +1,20 @@
 import React from 'react'
 
-const button = (state = [], action) => {
+const form = (state = [], action) => {
     switch (action.type) {
         case 'SHOW_FORM':
             let elementButton = state.filter(b => b.showElement === action.showElement).pop();
             if (elementButton) {
                 return [{
                     showElement: action.showElement,
-                    elementAction: 'create',
+                    elementAction: 'createPost',
                     enabled: !elementButton.enabled
                 }];
             }
             return [...state,
                 {
                     showElement: action.showElement,
-                    elementAction: 'create',
+                    elementAction: 'createPost',
                     enabled: true
                 }
             ];
@@ -22,7 +22,7 @@ const button = (state = [], action) => {
         case 'SHOW_UPDATE_FORM':
             return [{
                 showElement: 'form-element-1',
-                elementAction: 'update',
+                elementAction: 'updatePost',
                 optionalState: {
                     id: action.id,
                     title: action.title,
@@ -35,4 +35,4 @@ const button = (state = [], action) => {
     }
 };
 
-export default button
+export default form

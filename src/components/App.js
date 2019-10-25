@@ -1,24 +1,21 @@
 import React from 'react';
 import '../App.css';
-import Form from '../containers/Form';
-import Button from '../containers/Button';
-import PostList from '../containers/PostList';
+import MainPage from './pages/MainPage';
+// import PostViewPage from './pages/PostViewPage';
+import PostViewPage from '../containers/pages/PostViewPage';
 import 'react-fontawesome';
-import {BrowserRouter as Router} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 function App() {
     return (
         <Router>
-        <div className="App">
-            <div id={"Header"}>
-                <div id={'user-area'} className={'ui segment'}>
-                    <p id={'user-name'}>Username</p>
-                    <Button showElement={'form-element-1'}>Button</Button>
-                </div>
-            </div>
-            <Form id={'form-element-1'}/>
-            <PostList/>
-        </div>
+            <Switch>
+                <Route path="/post">
+                  <PostViewPage />
+                </Route>
+                <Route path="/">
+                   <MainPage />
+                </Route>
+            </Switch>
         </Router>
     );
 }

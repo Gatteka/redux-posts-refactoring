@@ -3,8 +3,7 @@ import uuid from 'uuid/v4';
 
 const posts = (state = [], action) => {
     switch (action.type) {
-        case 'SEND_FORM':
-            console.log(state);
+        case 'CREATE_POST':
             if (action.input && action.text) {
                 return [
                     ...state,
@@ -16,8 +15,10 @@ const posts = (state = [], action) => {
                 ];
             }
             return state;
+
         case 'DELETE_POST':
             return state.filter(post => post.id !== action.id);
+
         case 'UPDATE_POST':
             console.log('UPDATE_POST');
             if (action.text && action.title) {

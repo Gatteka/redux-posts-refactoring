@@ -4,10 +4,10 @@ export const showForm = (showElement) => ({
     showElement,
 });
 
-export const sendForm = (input,text) => ({
-    type: 'SEND_FORM',
+export const createPost = (input,text) => ({
+    type: 'CREATE_POST',
     input,
-    text,
+    text
 });
 
 export const deletePost = (id) => ({
@@ -17,6 +17,13 @@ export const deletePost = (id) => ({
 
 export const showUpdateForm = (id,title,text) => ({
     type: 'SHOW_UPDATE_FORM',
+    id,
+    title,
+    text
+});
+
+export const showPostDetail = (id,title,text) => ({
+    type: 'SHOW_POST_DETAIL_PAGE',
     id,
     title,
     text

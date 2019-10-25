@@ -1,9 +1,11 @@
 import { combineReducers, } from 'redux'
-import button from './button'
+import form from './form'
 import posts from './posts'
+import postViewPage from './postViewPage'
 
 
  export default combineReducers({
-     button,
+     form,
+     postViewPage,
      posts
 })

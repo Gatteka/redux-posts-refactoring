@@ -28,6 +28,10 @@
   overflow-x:hidden;
 }
 
+#post-title{
+  overflow-x:hidden;
+}
+
 #post-buttons{
   display: inline-flex;
 }
@@ -56,6 +60,9 @@ button.postDelete{
     width: 5%;
   right: 2px;
   top: 2px;
+}
+.div1{
+
 }
 .post{
   display: inline-block;
