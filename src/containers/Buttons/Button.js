@@ -12,9 +12,6 @@ import {put, takeEvery} from 'redux-saga/effects'
 import action from '../../index'
 
 function mapStateToProps(state, ownProps) {
-    console.log('Button');
-    console.log(state);
-    console.log(ownProps);
     return {
         classes: ownProps.classes,
         result: getButtonText(state, ownProps),
@@ -43,10 +40,9 @@ export function* doubleAction() {
 /** mapDispatchToProps
  * adds event to our prop. We can use it from Button component as well. */
 function mapDispatchToProps(dispatch, ownProps) {
-    console.log(ownProps);
 
     return {
-        onClick: function () {
+        onClick() {
             let action = ownProps.action;
             switch (action) {
                 case 'showForm':
@@ -58,9 +54,9 @@ function mapDispatchToProps(dispatch, ownProps) {
                 case 'updatePost':
                     return dispatch(updatePost(ownProps.title, ownProps.text, ownProps.id));
                 case 'showUpdateForm':
-                    return dispatch(showUpdateForm(ownProps.id, ownProps.title, ownProps.text));
+                    return dispatch(showUpdateForm(ownProps.data));
                 case 'showPostDetail':
-                    return dispatch(showPostDetail(ownProps.title, ownProps.text, ownProps.id));
+                    return dispatch(showPostDetail(ownProps.data));
             }
         }
     }

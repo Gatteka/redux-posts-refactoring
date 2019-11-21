@@ -36,18 +36,15 @@ function UpdateShowPopup({dispatch,data}) {
                         action={'showUpdateForm'}
                         buttonText={'UPDATE'}
                         classes={'ui right floated  button'}
-                        title={data.title}
-                        text={data.text}
-                        id={data.id}
+                        data={data}
                     />
                 </Grid.Column>
                 <Grid.Column textAlign='center'>
                         <UiButton
                             onClick={e => {
                                 e.preventDefault();
-                                dispatch(showPostDetail(data.id, data.title, data.text));
-                            }}
-                        >
+                                dispatch(showPostDetail(data));
+                            }}>
                             <Link to="/post">SHOW</Link>
                         </UiButton>
                 </Grid.Column>

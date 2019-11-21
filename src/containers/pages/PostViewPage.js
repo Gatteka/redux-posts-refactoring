@@ -7,7 +7,7 @@ import PostViewPage from '../../components/pages/PostViewPage'
  *  status - it's Form prop.
  * getButton will return some kind of state for this prop.
  */
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
     return {
         state: state.postViewPage.pop()
     }

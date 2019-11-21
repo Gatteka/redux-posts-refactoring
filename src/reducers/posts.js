@@ -20,7 +20,6 @@ const posts = (state = [], action) => {
             return state.filter(post => post.id !== action.id);
 
         case 'UPDATE_POST':
-            console.log('UPDATE_POST');
             if (action.text && action.title) {
                 state = state.filter(post => post.id !== action.id);
                 console.log(state);

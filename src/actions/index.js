@@ -15,18 +15,18 @@ export const deletePost = (id) => ({
     id
 });
 
-export const showUpdateForm = (id,title,text) => ({
+export const showUpdateForm = (data) => ({
     type: 'SHOW_UPDATE_FORM',
-    id,
-    title,
-    text
+    id: data.id,
+    title: data.title,
+    text: data.text
 });
 
-export const showPostDetail = (id,title,text) => ({
+export const showPostDetail = (data) => ({
     type: 'SHOW_POST_DETAIL_PAGE',
-    id,
-    title,
-    text
+    id: data.id,
+    title: data.title,
+    text: data.text
 });
 
 export const updatePost = (title,text,id) => ({

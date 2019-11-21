@@ -7,6 +7,7 @@ import Button from '../containers/Buttons/Button';
 /** Return main form with various buttons. Form can
  * create or update posts */
 function Form({ status = {enabled: false}}) {
+
     console.log('__FORM__');
     console.log(status);
 

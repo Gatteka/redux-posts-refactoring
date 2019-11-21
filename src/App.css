@@ -61,8 +61,18 @@ button.postDelete{
   right: 2px;
   top: 2px;
 }
-.div1{
+#register-ui-form{
+  margin:5%
+}
+label[for=form-input-control-first-name]{
+  padding-left: 4%;
+}
+label[for=form-input-control-last-name]{
+  padding-left: 4%;
+}
 
+div.equal .width .fields{
+  display: block;
 }
 .post{
   display: inline-block;
