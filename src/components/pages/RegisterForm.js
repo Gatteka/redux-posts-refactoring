@@ -86,9 +86,15 @@ let isRegister = props.action === 'register';
         }
         switch (key) {
             case fields.firstName:
-                if (value.length < 5) {
+                if (value.length < 2) {
                     return {
                         content: 'Not enough characters',
+                        pointing: 'left'
+                    };
+                }
+                if (!value.match('[a-zA-Zя-ёЯ-Ё]+$')) {
+                    return {
+                        content: 'Incorrect name. Use only characters',
                         pointing: 'left'
                     };
                 }

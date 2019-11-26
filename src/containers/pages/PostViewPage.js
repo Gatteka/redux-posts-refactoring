@@ -8,6 +8,7 @@ import PostViewPage from '../../components/pages/PostViewPage'
  * getButton will return some kind of state for this prop.
  */
 function mapStateToProps(state) {
+    console.log(state);
     return {
         state: state.postViewPage.pop()
     }

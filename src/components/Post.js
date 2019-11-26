@@ -16,7 +16,7 @@ function Post({dispatch, data}) {
                 <Button
                     action={'deletePost'}
                     buttonText={'DELETE'}
-                    id={data.id}
+                    id={data}
                 />
                 <UpdateShowPopup dispatch={dispatch} data={data}/>
             </div>
@@ -43,6 +43,7 @@ function UpdateShowPopup({dispatch,data}) {
                         <UiButton
                             onClick={e => {
                                 e.preventDefault();
+                                console.log(data);
                                 dispatch(showPostDetail(data));
                             }}>
                             <Link to="/post">SHOW</Link>

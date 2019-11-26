@@ -10,9 +10,9 @@ export const createPost = (input,text) => ({
     text
 });
 
-export const deletePost = (id) => ({
+export const deletePost = (data) => ({
     type: 'DELETE_POST',
-    id
+    data
 });
 
 export const showUpdateForm = (data) => ({
@@ -20,6 +20,11 @@ export const showUpdateForm = (data) => ({
     id: data.id,
     title: data.title,
     text: data.text
+});
+
+export const setPostsFilter = (filter) => ({
+    type: 'SET_FILTER',
+    filter: filter,
 });
 
 export const showPostDetail = (data) => ({

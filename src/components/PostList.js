@@ -6,7 +6,7 @@ function PostList({allPosts}) {
 
     return (
         <ul className={'list ui grid'}>
-            {allPosts.map(post => (
+            {allPosts.filter(post => post.deleted === false).map(post => (
                 <div className="two wide column">
                     <Post key={post.id} id={post.id} title={post.title} text={post.text}/>
                 </div>

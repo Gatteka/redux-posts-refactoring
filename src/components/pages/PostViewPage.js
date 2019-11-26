@@ -9,7 +9,7 @@ import Header from './Header';
 function PostViewPage({state}) {
     console.log(state);
     if (!state) {
-       // window.location.href = "/";
+        window.location.href = "/mainPage";
     }
     return (
         <div className="App">

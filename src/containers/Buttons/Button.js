@@ -5,7 +5,8 @@ import {
     showForm,
     showUpdateForm,
     updatePost,
-    showPostDetail
+    showPostDetail,
+    setPostsFilter
 } from '../../actions'
 import Button from '../../components/Buttons/Button'
 import {put, takeEvery} from 'redux-saga/effects'
@@ -57,6 +58,8 @@ function mapDispatchToProps(dispatch, ownProps) {
                     return dispatch(showUpdateForm(ownProps.data));
                 case 'showPostDetail':
                     return dispatch(showPostDetail(ownProps.data));
+                case 'setPostsFilter':
+                    return dispatch(setPostsFilter(ownProps.filter))
             }
         }
     }
