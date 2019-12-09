@@ -32,15 +32,15 @@ const posts = (state = [], action) => {
 
         case 'UPDATE_POST':
             if (action.text && action.title) {
-                state = state.filter(post => post.id !== action.id);
                 console.log(state);
                 console.log(action);
                 return  [
-                    ...state['active'],
+                    ...state.filter(post => post.id !== action.id),
                     {
                         id: action.id,
                         title: action.title,
-                        text: action.text
+                        text: action.text,
+                        deleted: false
                     }
                 ];
             }

@@ -12,6 +12,7 @@ function mapStateToProps(state, ownProps) {
            title: ownProps.title,
            text: ownProps.text,
            id: ownProps.id,
+           className: ownProps.className
        }
     }
 }

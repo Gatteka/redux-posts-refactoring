@@ -92,7 +92,7 @@ let isRegister = props.action === 'register';
                         pointing: 'left'
                     };
                 }
-                if (!value.match('[a-zA-Zя-ёЯ-Ё]+$')) {
+                if (!value.match( /^[a-z ,.'-]+$/i)) {
                     return {
                         content: 'Incorrect name. Use only characters',
                         pointing: 'left'
@@ -103,6 +103,12 @@ let isRegister = props.action === 'register';
                 if (value.length < 2) {
                     return {
                         content: 'Not enough characters',
+                        pointing: 'left'
+                    };
+                }
+                if (!value.match( /^[a-z ,.'-]+$/i)) {
+                    return {
+                        content: 'Incorrect name. Use only characters',
                         pointing: 'left'
                     };
                 }

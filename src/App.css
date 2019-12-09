@@ -1,91 +1,134 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+    height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #09d3ac;
-}
-#user-name{
-  display: inline;
-  margin: 1%;
-}
-#post-text-content{
-  overflow-x:hidden;
+    color: #09d3ac;
 }
 
-#post-title{
-  overflow-x:hidden;
+#user-name {
+    display: inline;
+    margin: 1%;
 }
 
-#post-buttons{
-  display: inline-flex;
+#post-text-content {
+    overflow-x: hidden;
+}
+
+#post-title {
+    overflow-x: hidden;
+}
+
+#post-buttons {
+    display: inline-flex;
+}
+
+.button-delete {
+    background-color: rgba(209, 10, 11, 0.48);
+}
+
+.button-create {
+    background-color: #9dc9f9;
 }
 
 .hidden {
-  display:none;
-}
-.normal{
-  display: inline-block;
-}
-.list{
-  /*display: flex;*/
-  display: list-item;
-}
-.ui.primary.button {
-    margin-top: 5%;
-  /*position: absolute;*/
-}
-.input{
-  border-radius: 4px;
-  margin: 10px;
-}
-button.postDelete{
-  position: absolute;
-    height: 5%;
-    width: 5%;
-  right: 2px;
-  top: 2px;
-}
-#register-ui-form{
-  margin:5%
-}
-label[for=form-input-control-first-name]{
-  padding-left: 4%;
-}
-label[for=form-input-control-last-name]{
-  padding-left: 4%;
+    display: none;
 }
 
-div.equal .width .fields{
-  display: block;
+.normal {
+    display: inline-block;
 }
-.post{
-  display: inline-block;
-  position: relative;
-  height: 100px;
-  width: 125px;
-  background-color: #f6f8f9;
-  margin: 15px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 4px 5px #777;
-  border-radius: 5px;
+.deleted-post {
+    background-color: rgba(221, 111, 108, 0.64) !important;
 }
+
+.list {
+    /*display: flex;*/
+    display: list-item;
+}
+
+.ui.primary.button {
+    margin-top: 5%;
+    /*position: absolute;*/
+}
+
+.ui.button {
+    box-shadow: 0 1px 4px 0 rgba(50, 53, 56, 0.15) !important ;
+}
+
+.ui.buttons {
+    box-shadow: 0 1px 2px 0 rgba(50, 53, 56, 0.15) ;
+}
+
+.input {
+    border-radius: 4px;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 1025px) {
+    .post-items {
+        display: inline-table !important;
+    }
+    .list {
+        display: inline-block !important;
+    }
+}
+
+button.postDelete {
+    position: absolute;
+    height: 5%;
+    width: 5%;
+    right: 2px;
+    top: 2px;
+}
+
+#register-ui-form {
+    margin: 5%
+}
+
+#user-area{
+    display: flex;
+}
+
+label[for=form-input-control-first-name] {
+    padding-left: 4%;
+}
+
+label[for=form-input-control-last-name] {
+    padding-left: 4%;
+}
+
+div.equal .width .fields {
+    display: block;
+}
+
+/*.post {*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    height: 100px;*/
+/*    width: 125px;*/
+/*    background-color: #f6f8f9;*/
+/*    margin: 15px;*/
+/*    -webkit-box-shadow: 0 3px 2px #777;*/
+/*    -moz-box-shadow: 0 3px 2px #777;*/
+/*    box-shadow: 0 4px 5px #777;*/
+/*    border-radius: 5px;*/
+/*}*/
 
 /*.form{*/
 /*  margin-left: 5px;*/

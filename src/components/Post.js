@@ -6,26 +6,30 @@ import Button from '../containers/Buttons/Button';
 import {Link} from "react-router-dom";
 
 /** Post component */
-function Post({dispatch, data}) {
+function Post({dispatch, data, className = 'ui segment'}) {
 
     return (
-        <div className={'ui segment'}>
+        <div className={className}>
+
             <h4 id={'post-title'}>{data.title}</h4>
             <p id={'post-text-content'}>{data.text}</p>
             <div id={'post-buttons'}>
+                <UiButton.Group>
                 <Button
                     action={'deletePost'}
                     buttonText={'DELETE'}
                     id={data}
                 />
+                <UiButton.Or />
                 <UpdateShowPopup dispatch={dispatch} data={data}/>
+                </UiButton.Group>
             </div>
         </div>
     );
 }
 
 /** Button with popup options */
-function UpdateShowPopup({dispatch,data}) {
+function UpdateShowPopup({data}) {
     return (
         <Popup
             trigger={<UiButton>. . .</UiButton>}
@@ -40,14 +44,14 @@ function UpdateShowPopup({dispatch,data}) {
                     />
                 </Grid.Column>
                 <Grid.Column textAlign='center'>
-                        <UiButton
-                            onClick={e => {
-                                e.preventDefault();
-                                console.log(data);
-                                dispatch(showPostDetail(data));
-                            }}>
-                            <Link to="/post">SHOW</Link>
-                        </UiButton>
+                    <Link to="/post">
+                        <Button
+                            action={'showPostDetail'}
+                            buttonText={'Show'}
+                            classes={'ui floated  button'}
+                            data={data}
+                        />
+                    </Link>
                 </Grid.Column>
             </Grid>
         </Popup>

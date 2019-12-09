@@ -10,6 +10,7 @@ import {
 } from '../../actions'
 import Button from '../../components/Buttons/Button'
 import {put, takeEvery} from 'redux-saga/effects'
+import {FormDataText} from  '../Form'
 import action from '../../index'
 
 function mapStateToProps(state, ownProps) {
@@ -19,6 +20,14 @@ function mapStateToProps(state, ownProps) {
     }
 }
 
+/**
+ * Set text for "show/hide form" button
+ * ( if this button have prop 'showElement')
+ *
+ * @param state
+ * @param ownProps
+ * @returns {string|*}
+ */
 function getButtonText(state, ownProps) {
     if (!ownProps.showElement) {
         return ownProps.buttonText
@@ -27,7 +36,7 @@ function getButtonText(state, ownProps) {
     if (!formState) {
         return ownProps.buttonText
     }
-    return formState.enabled ? "Hide Form" : "Show Form"
+    return formState.enabled ? FormDataText.hideForm : ownProps.buttonText
 }
 
 function* hide() {
@@ -38,12 +47,19 @@ export function* doubleAction() {
     yield takeEvery('CREATE_POST', hide)
 }
 
-/** mapDispatchToProps
- * adds event to our prop. We can use it from Button component as well. */
+/**
+ *
+ * mapDispatchToProps
+ * adds event to our prop. We can use it from Button component as well.
+ *
+ * @param dispatch
+ * @param ownProps
+ * @returns {{onClick(): (*|*|*|*|*|*|*)}|*}
+ */
 function mapDispatchToProps(dispatch, ownProps) {
 
     return {
-        onClick() {
+        onClick () {
             let action = ownProps.action;
             switch (action) {
                 case 'showForm':

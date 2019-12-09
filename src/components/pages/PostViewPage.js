@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import 'react-fontawesome';
 import {Button as UiButton} from 'semantic-ui-react'
 import Header from './Header';
+import Button from '../../containers/Buttons/Button';
 
 /** Home page  */
 function PostViewPage({state}) {
@@ -15,7 +16,10 @@ function PostViewPage({state}) {
         <div className="App">
             <Header>
                 <Link to="/">
-                    <UiButton>Back</UiButton>
+                    <Button
+                        buttonText={'Back'}
+                        classes={'button-create ui button'}
+                    >Back</Button>
                 </Link>
             </Header>
             <br/>

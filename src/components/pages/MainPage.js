@@ -16,15 +16,18 @@ function MainPage() {
                 buttonText={'Show Form'}
                 action={"showForm"}
                 showElement={'form-element-1'}
+                id={'form-element-1'}
             />
                 <Button
                     buttonText={'Show Active Posts'}
                     action={"setPostsFilter"}
+                    classes={'ui button button-delete'}
                     filter={'active'}
                 />
                 <Button
                     buttonText={'Show Deleted Posts'}
                     action={"setPostsFilter"}
+                    classes={'button-create ui button'}
                     filter={'deleted'}
                 />
             </Header>

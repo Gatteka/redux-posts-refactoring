@@ -18,3 +18,10 @@ function getButton(state, ownProps) {
 export default connect(
     mapStateToProps,
 )(Form)
+
+
+
+export const FormDataText = {
+    hideForm: 'Hide Form',
+    showForm: 'Show Form'
+};

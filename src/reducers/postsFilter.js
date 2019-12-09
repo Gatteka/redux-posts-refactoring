@@ -5,9 +5,9 @@ const postsFilter = (state = [], action) => {
         case 'SET_FILTER':
             console.log(state);
             if (action.filter) {
-                return [{
-                       filter: action.filter
-                    }];
+                return {
+                       type: action.filter
+                    };
             }
             return state;
 

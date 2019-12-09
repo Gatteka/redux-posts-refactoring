@@ -36,7 +36,7 @@ export const showPostDetail = (data) => ({
 
 export const updatePost = (title,text,id) => ({
     type: 'UPDATE_POST',
-    title,
-    text,
-    id
+    title: title,
+    text: text,
+    id: id
 });

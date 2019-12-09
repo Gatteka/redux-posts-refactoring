@@ -1,5 +1,4 @@
 import React from 'react';
-import {showForm} from "../../actions";
 
 function Button({onClick,result,classes}) {
     return (
