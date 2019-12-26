@@ -8,10 +8,10 @@ import Form from '../components/Form'
  * getButton will return some kind of state for this prop.
  * */
 const mapStateToProps = (state, ownProps) => ({
-    status: getButton(state, ownProps),
+    status: getData(state, ownProps),
 });
 
-function getButton(state, ownProps) {
+function getData(state, ownProps) {
     return state.form.filter(b => b.showElement === ownProps.id).pop();
 }
 
@@ -20,8 +20,22 @@ export default connect(
 )(Form)
 
 
-
+/**
+ * Button text for
+ *
+ * src/containers/Buttons/Button.js
+ */
 export const FormDataText = {
     hideForm: 'Hide Form',
     showForm: 'Show Form'
+};
+
+/**
+ * Button text for
+ *
+ * src/components/Form.js
+ */
+export const FormDataButton = {
+    updatePost: 'Update Post',
+    createPost: 'Create Post'
 };

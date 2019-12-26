@@ -2,15 +2,14 @@ import {connect} from 'react-redux'
 import PostViewPage from '../../components/pages/PostViewPage'
 
 /**
- * Get state from redux and map to properties of component
- *
- *  status - it's Form prop.
- * getButton will return some kind of state for this prop.
+ retrieve from posts (by postViewPage id) that we need to show in postViewPage
  */
 function mapStateToProps(state) {
     console.log(state);
+
+    let postViewDataId = state.postViewPage.slice(-1).pop().id;
     return {
-        state: state.postViewPage.pop()
+        state: state.posts.filter(post => post.id === postViewDataId).pop()
     }
 }
 

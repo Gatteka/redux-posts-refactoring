@@ -3,17 +3,22 @@ import {connect} from 'react-redux'
 import {createPost, updatePost} from '../actions'
 import {Form as AreaForm, TextArea} from 'semantic-ui-react'
 import Button from '../containers/Buttons/Button';
+import {FormDataButton} from '../containers/Form';
+
 
 /** Return main form with various buttons. Form can
  * create or update posts */
-function Form({ status = {enabled: false}}) {
-
-    console.log('__FORM__');
-    console.log(status);
+function Form({status = {enabled: false}}) {
 
     /** React Hooks */
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
+
+    let data = {
+        title: title,
+        text: text,
+        id: status.optionalState ? status.optionalState.id : false,
+    };
 
     /** React Hooks effects */
     useEffect(() => {
@@ -25,8 +30,8 @@ function Form({ status = {enabled: false}}) {
 
 
     function showText() {
-        if (status.elementAction === 'updatePost') return 'Update Post';
-        if (status.elementAction === 'createPost') return 'Create Post';
+        if (status.elementAction === 'updatePost') return FormDataButton.updatePost;
+        if (status.elementAction === 'createPost') return FormDataButton.createPost;
     }
 
     return (
@@ -41,15 +46,14 @@ function Form({ status = {enabled: false}}) {
             </AreaForm>
             <div>
                 <Button
-                    title={title}
-                    text={text}
+                    data={data}
                     classes={'ui primary button'}
                     buttonText={showText()}
-                    id={ status.optionalState ? status.optionalState.id : false}
                     action={status.elementAction}
                 />
             </div>
         </div>
     );
 }
+
 export default connect()(Form)

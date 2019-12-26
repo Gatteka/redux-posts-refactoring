@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 /** Post component */
 function Post({dispatch, data, className = 'ui segment'}) {
-
+console.log(data);
     return (
         <div className={className}>
 
@@ -17,7 +17,7 @@ function Post({dispatch, data, className = 'ui segment'}) {
                 <UiButton.Group>
                 <Button
                     action={'deletePost'}
-                    buttonText={'DELETE'}
+                    buttonText={'Delete'}
                     id={data}
                 />
                 <UiButton.Or />
@@ -38,7 +38,8 @@ function UpdateShowPopup({data}) {
                 <Grid.Column textAlign='center'>
                     <Button
                         action={'showUpdateForm'}
-                        buttonText={'UPDATE'}
+                        showElement={'form-element-1'}
+                        buttonText={'Update'}
                         classes={'ui right floated  button'}
                         data={data}
                     />

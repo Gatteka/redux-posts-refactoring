@@ -1,8 +1,8 @@
 import React from 'react'
 
 const postViewPage = (state = [], action) => {
-    console.log(state);
-    console.log(action);
+    // console.log(state);
+    // console.log(action);
     switch (action.type) {
         case 'SHOW_POST_DETAIL_PAGE':
             return [{

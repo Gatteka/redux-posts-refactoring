@@ -8,18 +8,46 @@ import StartPage from "./pages/StartPage";
 function App() {
     return (
         <Router>
-            <Switch>
-                <Route path="/post" component={PostViewPage}>
-                </Route>
-                <Route path="/login" component={StartPage}>
-                </Route>
-                <Route path="/mainPage" component={MainPage}>
-                </Route>
-                <Route component={MainPage}>
-                </Route>
-            </Switch>
-        </Router>
+        <Switch>
+            <Route path="/post" component={PostViewPage}>
+            </Route>
+            <Route path="/login" component={StartPage}>
+            </Route>
+            <Route path="/mainPage" component={MainPage}>
+            </Route>
+            <Route component={StartPage}>
+            </Route>
+        </Switch>
+    </Router>
     );
 }
 
 export default App;
+
+// release variant
+{/*<Router>*/}
+{/*    <Switch>*/}
+{/*        <Route path="/post" component={PostViewPage}>*/}
+{/*        </Route>*/}
+{/*        <Route path="/login" component={StartPage}>*/}
+{/*        </Route>*/}
+{/*        <Route path="/mainPage" component={MainPage}>*/}
+{/*        </Route>*/}
+{/*        <Route component={StartPage}>*/}
+{/*        </Route>*/}
+{/*    </Switch>*/}
+{/*</Router>*/}
+
+//test variant
+{/*<Router>*/}
+{/*    <Switch>*/}
+{/*        <Route path="/post" component={PostViewPage}>*/}
+{/*        </Route>*/}
+{/*        <Route path="/login" component={StartPage}>*/}
+{/*        </Route>*/}
+{/*        <Route path="/mainPage" component={MainPage}>*/}
+{/*        </Route>*/}
+{/*        <Route component={MainPage}>*/}
+{/*        </Route>*/}
+{/*    </Switch>*/}
+{/*</Router>*/}

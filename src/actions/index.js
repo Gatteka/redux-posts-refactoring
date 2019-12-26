@@ -1,13 +1,12 @@
-
 export const showForm = (showElement) => ({
     type: 'SHOW_FORM',
     showElement,
 });
 
-export const createPost = (input,text) => ({
+export const createPost = (data) => ({
     type: 'CREATE_POST',
-    input,
-    text
+    title: data.title,
+    text: data.text,
 });
 
 export const deletePost = (data) => ({
@@ -15,9 +14,10 @@ export const deletePost = (data) => ({
     data
 });
 
-export const showUpdateForm = (data) => ({
+export const showUpdateForm = (data,showElement) => ({
     type: 'SHOW_UPDATE_FORM',
     id: data.id,
+    showElement: showElement,
     title: data.title,
     text: data.text
 });
@@ -34,9 +34,10 @@ export const showPostDetail = (data) => ({
     text: data.text
 });
 
-export const updatePost = (title,text,id) => ({
+export const updatePost = (data) => ({
     type: 'UPDATE_POST',
-    title: title,
-    text: text,
-    id: id
+    title: data.title,
+    text: data.text,
+    id: data.id
+
 });

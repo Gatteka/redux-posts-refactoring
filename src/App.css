@@ -34,6 +34,10 @@
     overflow-x: hidden;
 }
 
+.ui.button:focus {
+    background-color: #babbbc;
+}
+
 #post-buttons {
     display: inline-flex;
 }
@@ -44,6 +48,9 @@
 
 .button-create {
     background-color: #9dc9f9;
+}
+a {
+    display: contents;
 }
 
 .hidden {

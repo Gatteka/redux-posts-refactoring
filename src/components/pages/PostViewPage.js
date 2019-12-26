@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../../App.css';
 import {Link} from "react-router-dom";
 import 'react-fontawesome';
-import {Button as UiButton} from 'semantic-ui-react'
 import Header from './Header';
 import Button from '../../containers/Buttons/Button';
 
-/** Home page  */
-function PostViewPage({state}) {
-    console.log(state);
-    if (!state) {
-        window.location.href = "/mainPage";
-    }
+/**
+ *
+ * @param state
+ * @returns {*}
+ * @constructor
+ */
+function PostViewPage({state = false}) {
+     console.log(state);
     return (
         <div className="App">
             <Header>
@@ -21,12 +22,25 @@ function PostViewPage({state}) {
                         classes={'button-create ui button'}
                     >Back</Button>
                 </Link>
+                <Button
+                    action={'showUpdateForm'}
+                    buttonText={'Update'}
+                    showElement={'form-element-1'}
+                    classes={'button-create ui button'}
+                    data={state}
+                />
             </Header>
             <br/>
-            <div className="ui raised very padded text container segment">
-                <h2 className="ui header">{state.title}</h2>
-                <p>{state.text}</p>
-            </div>
+            {
+                state ?
+                <div className="ui raised very padded text container segment">
+                    <h2 className="ui header">{state.title}</h2>
+                    <p>{state.text}</p>
+                </div>
+                : <div className="ui raised very padded text container segment">
+                    <p>This post is not available</p>
+                </div>
+            }
         </div>
     );
 }

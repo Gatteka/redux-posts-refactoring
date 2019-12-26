@@ -5,7 +5,9 @@ import {Form, Input} from 'semantic-ui-react'
  * Registration/Login Form
  */
 function RegisterForm(props) {
+
 let isRegister = props.action === 'register';
+
     const fields = isRegister ? {
         firstName: 'firstName',
         lastName: 'lastName',
@@ -17,7 +19,6 @@ let isRegister = props.action === 'register';
         email: 'email',
         };
 
-    console.log(props);
 
     const [formState, setFormState] = useState([]);
 
@@ -138,7 +139,7 @@ let isRegister = props.action === 'register';
                 }
                 return false;
             default:
-                return false
+                return false;
         }
     }
 
@@ -208,7 +209,7 @@ let isRegister = props.action === 'register';
         <Form id={'register-ui-form'}>
             <Form.Group>
                 <Form.Field
-                    id='form-input-control-last-name'
+                    id='form-input-control-email'
                     error={hasErrors('email')}
                     control={Input}
                     width={8}
@@ -218,7 +219,7 @@ let isRegister = props.action === 'register';
                     placeholder='email'
                 />
                 <Form.Field
-                    id='form-input-control-last-name'
+                    id='form-input-control-password'
                     error={hasErrors('password')}
                     control={Input}
                     width={8}

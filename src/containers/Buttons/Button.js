@@ -11,7 +11,6 @@ import {
 import Button from '../../components/Buttons/Button'
 import {put, takeEvery} from 'redux-saga/effects'
 import {FormDataText} from  '../Form'
-import action from '../../index'
 
 function mapStateToProps(state, ownProps) {
     return {
@@ -29,6 +28,7 @@ function mapStateToProps(state, ownProps) {
  * @returns {string|*}
  */
 function getButtonText(state, ownProps) {
+
     if (!ownProps.showElement) {
         return ownProps.buttonText
     }
@@ -44,7 +44,8 @@ function* hide() {
 }
 
 export function* doubleAction() {
-    yield takeEvery('CREATE_POST', hide)
+    yield takeEvery('CREATE_POST', hide);
+    yield takeEvery('UPDATE_POST', hide);
 }
 
 /**
@@ -65,17 +66,19 @@ function mapDispatchToProps(dispatch, ownProps) {
                 case 'showForm':
                     return dispatch(showForm(ownProps.showElement));
                 case 'createPost':
-                    return dispatch(createPost(ownProps.title, ownProps.text));
+                    return dispatch(createPost(ownProps.data));
                 case 'deletePost':
                     return dispatch(deletePost(ownProps.id));
                 case 'updatePost':
-                    return dispatch(updatePost(ownProps.title, ownProps.text, ownProps.id));
+                    return dispatch(updatePost(ownProps.data));
                 case 'showUpdateForm':
-                    return dispatch(showUpdateForm(ownProps.data));
+                    return dispatch(showUpdateForm(ownProps.data,ownProps.showElement));
                 case 'showPostDetail':
                     return dispatch(showPostDetail(ownProps.data));
                 case 'setPostsFilter':
-                    return dispatch(setPostsFilter(ownProps.filter))
+                    return dispatch(setPostsFilter(ownProps.filter));
+                default:
+                    return false;
             }
         }
     }

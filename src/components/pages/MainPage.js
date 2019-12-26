@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import Form from '../../containers/Form';
 import Button from '../../containers/Buttons/Button';
 import PostList from '../../containers/PostList';
 import 'react-fontawesome';
@@ -16,8 +15,7 @@ function MainPage() {
                 buttonText={'Show Form'}
                 action={"showForm"}
                 showElement={'form-element-1'}
-                id={'form-element-1'}
-            />
+               />
                 <Button
                     buttonText={'Show Active Posts'}
                     action={"setPostsFilter"}
@@ -31,7 +29,6 @@ function MainPage() {
                     filter={'deleted'}
                 />
             </Header>
-            <Form id={'form-element-1'}/>
             <PostList/>
         </div>
     );

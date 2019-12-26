@@ -5,14 +5,11 @@ import RegisterForm from './RegisterForm'
 function StartPage () {
     const [open, setOpen] = useState(false);
     const [action, setAction] = useState('');
-    const [result, setResult] = useState('show the modal to capture a result');
 
     return (
         <div className="App">
         <div className={'ui segment'}>
-                <p>
-                    Result: <em>{result}</em>
-                </p>
+
                 <UiButton onClick={function(){ setOpen('true'); setAction('login')}}>Login</UiButton>
                 <UiButton onClick={function(){ setOpen('true'); setAction('register')}}>Register</UiButton>
 
@@ -26,8 +23,7 @@ function StartPage () {
                 />
             </div>
         </div>
-        )
-
+        );
 }
 
 export default StartPage
